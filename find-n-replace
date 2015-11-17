@@ -1,0 +1,7 @@
+#!/usr/bin/env python3
+
+import sys
+file = sys.argv[1]; search_text = sys.argv[2]; replace_text = sys.argv[3]
+with open(file) as src:
+    lines = src.read()
+print(lines.replace(search_text, replace_text))
