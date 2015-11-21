@@ -1,0 +1,11 @@
+#!/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin
+if [ "$1" = "" ]; then
+    echo -e "usage:\n      update-key [XXXXXXXXXXXXXXXX] \n\n"
+    exit 0
+fi
+
+gpg --keyserver wwwkeys.pgp.net --recv-keys $1 && sleep 1
+sudo apt-key add ~/.gnupg/pubring.gpg
+
+echo "run 'apt-get update' to update your repositories."

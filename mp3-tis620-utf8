@@ -1,0 +1,4 @@
+#!/bin/bash
+find -type f | grep mp3$ | while read -r x; do
+	mid3iconv -e ISO-8859-11 -d "$x"
+done

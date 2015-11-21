@@ -1,0 +1,8 @@
+#!/bin/bash
+if [ "X$1" == "X" ]; then
+  echo "Usage: youtube-dl-mp3 <youtube_url>"
+  exit 1
+fi
+
+#youtube-dl -k -t -x --audio-format mp3 $1
+youtube-dl -t -x --audio-format mp3 $1
